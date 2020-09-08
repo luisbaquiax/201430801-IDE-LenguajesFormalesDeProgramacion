@@ -1,2 +1,2 @@
-# 201430801-IDE-LenguajesFormalesDeProgrmaci-n
+# 201430801-IDE-LenguajesFormalesDeProgrmaciOn
 IDE
