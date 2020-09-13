@@ -64,6 +64,7 @@
             this.abrirArchivoToolStripMenuItem.Name = "abrirArchivoToolStripMenuItem";
             this.abrirArchivoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.abrirArchivoToolStripMenuItem.Text = "Nuevo proyecto";
+            this.abrirArchivoToolStripMenuItem.Click += new System.EventHandler(this.abrirArchivoToolStripMenuItem_Click);
             // 
             // editarArchivoToolStripMenuItem
             // 
@@ -77,6 +78,7 @@
             this.eliminarProyectoToolStripMenuItem.Name = "eliminarProyectoToolStripMenuItem";
             this.eliminarProyectoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eliminarProyectoToolStripMenuItem.Text = "Eliminar proyecto";
+            this.eliminarProyectoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProyectoToolStripMenuItem_Click);
             // 
             // panelEditor
             // 

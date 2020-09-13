@@ -21,5 +21,15 @@ namespace IDE_PROYECTO1
         {
 
         }
+
+        private void abrirArchivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eliminarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

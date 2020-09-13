@@ -8,3 +8,13 @@ C:\Users\Usuario\Documents\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.csproj.CoreComp
 C:\Users\Usuario\Documents\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.exe
 C:\Users\Usuario\Documents\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.pdb
 C:\Users\Usuario\Documents\IDE-PROYECTO1\obj\Debug\IDE_PROYECTO1.Form1.resources
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\bin\Debug\IDE-PROYECTO1.exe.config
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\bin\Debug\IDE-PROYECTO1.exe
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\bin\Debug\IDE-PROYECTO1.pdb
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE_PROYECTO1.VentanaEditor.resources
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE_PROYECTO1.Properties.Resources.resources
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.exe
+C:\Users\Usuario\Documents\201430801-IDE-LenguajesFormalesDeProgramacion\IDE-PROYECTO1\obj\Debug\IDE-PROYECTO1.pdb
