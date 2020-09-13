@@ -28,5 +28,50 @@ namespace IDE_PROYECTO1
         {
 
         }
+
+        private void menuNuevoProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuEliminarProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuCrearCodigoFuente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuAbrirCodigoFuente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuEliminarCodigoFuente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuCerrarCodigoFuente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExportarErrores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
