@@ -12,7 +12,7 @@ namespace IDE_PROYECTO1.automata
         private String estadoSiguiente;
         private String valor;
 
-        public Transiciones(string estadoInicial, string estadoSiguiente, string valor)
+        public Transicion(string estadoInicial, string estadoSiguiente, string valor)
         {
             this.estadoInicial = estadoInicial;
             this.valor = valor;
