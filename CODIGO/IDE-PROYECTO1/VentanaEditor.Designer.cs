@@ -39,18 +39,20 @@
             this.menuEliminarCodigoFuente = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCerrarCodigoFuente = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtErrores = new System.Windows.Forms.RichTextBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnExportarErrores = new System.Windows.Forms.Button();
+            this.textBoxColumna = new System.Windows.Forms.TextBox();
+            this.txtBoxFila = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtEditorCodigo = new System.Windows.Forms.RichTextBox();
-            this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBoxFila = new System.Windows.Forms.TextBox();
-            this.textBoxColumna = new System.Windows.Forms.TextBox();
-            this.btnExportarErrores = new System.Windows.Forms.Button();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelContenedor.SuspendLayout();
@@ -84,21 +86,21 @@
             // menuNuevoProyecto
             // 
             this.menuNuevoProyecto.Name = "menuNuevoProyecto";
-            this.menuNuevoProyecto.Size = new System.Drawing.Size(224, 26);
+            this.menuNuevoProyecto.Size = new System.Drawing.Size(209, 26);
             this.menuNuevoProyecto.Text = "Nuevo proyecto";
             this.menuNuevoProyecto.Click += new System.EventHandler(this.menuNuevoProyecto_Click);
             // 
             // menuAbrirProyecto
             // 
             this.menuAbrirProyecto.Name = "menuAbrirProyecto";
-            this.menuAbrirProyecto.Size = new System.Drawing.Size(224, 26);
+            this.menuAbrirProyecto.Size = new System.Drawing.Size(209, 26);
             this.menuAbrirProyecto.Text = "Abrir proyecto";
             this.menuAbrirProyecto.Click += new System.EventHandler(this.editarArchivoToolStripMenuItem_Click);
             // 
             // menuEliminarProyecto
             // 
             this.menuEliminarProyecto.Name = "menuEliminarProyecto";
-            this.menuEliminarProyecto.Size = new System.Drawing.Size(224, 26);
+            this.menuEliminarProyecto.Size = new System.Drawing.Size(209, 26);
             this.menuEliminarProyecto.Text = "Eliminar proyecto";
             this.menuEliminarProyecto.Click += new System.EventHandler(this.menuEliminarProyecto_Click);
             // 
@@ -117,28 +119,28 @@
             // menuCrearCodigoFuente
             // 
             this.menuCrearCodigoFuente.Name = "menuCrearCodigoFuente";
-            this.menuCrearCodigoFuente.Size = new System.Drawing.Size(224, 26);
+            this.menuCrearCodigoFuente.Size = new System.Drawing.Size(186, 26);
             this.menuCrearCodigoFuente.Text = "Crear";
             this.menuCrearCodigoFuente.Click += new System.EventHandler(this.menuCrearCodigoFuente_Click);
             // 
             // menuAbrirCodigoFuente
             // 
             this.menuAbrirCodigoFuente.Name = "menuAbrirCodigoFuente";
-            this.menuAbrirCodigoFuente.Size = new System.Drawing.Size(224, 26);
+            this.menuAbrirCodigoFuente.Size = new System.Drawing.Size(186, 26);
             this.menuAbrirCodigoFuente.Text = "Abrir ";
             this.menuAbrirCodigoFuente.Click += new System.EventHandler(this.menuAbrirCodigoFuente_Click);
             // 
             // menuEliminarCodigoFuente
             // 
             this.menuEliminarCodigoFuente.Name = "menuEliminarCodigoFuente";
-            this.menuEliminarCodigoFuente.Size = new System.Drawing.Size(224, 26);
+            this.menuEliminarCodigoFuente.Size = new System.Drawing.Size(186, 26);
             this.menuEliminarCodigoFuente.Text = "Eliminar";
             this.menuEliminarCodigoFuente.Click += new System.EventHandler(this.menuEliminarCodigoFuente_Click);
             // 
             // menuCerrarCodigoFuente
             // 
             this.menuCerrarCodigoFuente.Name = "menuCerrarCodigoFuente";
-            this.menuCerrarCodigoFuente.Size = new System.Drawing.Size(224, 26);
+            this.menuCerrarCodigoFuente.Size = new System.Drawing.Size(186, 26);
             this.menuCerrarCodigoFuente.Text = "Cerrar Archivo";
             this.menuCerrarCodigoFuente.Click += new System.EventHandler(this.menuCerrarCodigoFuente_Click);
             // 
@@ -148,6 +150,13 @@
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
+            // menuSalir
+            // 
+            this.menuSalir.Name = "menuSalir";
+            this.menuSalir.Size = new System.Drawing.Size(52, 24);
+            this.menuSalir.Text = "Salir";
+            this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
             // panel2
             // 
@@ -182,6 +191,57 @@
             this.panelContenedor.Size = new System.Drawing.Size(1523, 664);
             this.panelContenedor.TabIndex = 1;
             // 
+            // btnExportarErrores
+            // 
+            this.btnExportarErrores.Location = new System.Drawing.Point(372, 489);
+            this.btnExportarErrores.Name = "btnExportarErrores";
+            this.btnExportarErrores.Size = new System.Drawing.Size(124, 34);
+            this.btnExportarErrores.TabIndex = 7;
+            this.btnExportarErrores.Text = "ExportarErrores";
+            this.btnExportarErrores.UseVisualStyleBackColor = true;
+            this.btnExportarErrores.Click += new System.EventHandler(this.btnExportarErrores_Click);
+            // 
+            // textBoxColumna
+            // 
+            this.textBoxColumna.Location = new System.Drawing.Point(276, 495);
+            this.textBoxColumna.Name = "textBoxColumna";
+            this.textBoxColumna.Size = new System.Drawing.Size(52, 22);
+            this.textBoxColumna.TabIndex = 6;
+            // 
+            // txtBoxFila
+            // 
+            this.txtBoxFila.Location = new System.Drawing.Point(122, 495);
+            this.txtBoxFila.Name = "txtBoxFila";
+            this.txtBoxFila.Size = new System.Drawing.Size(52, 22);
+            this.txtBoxFila.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(207, 495);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Columna";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(86, 495);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Fila";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 495);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Errores";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtEditorCodigo);
@@ -199,63 +259,9 @@
             this.txtEditorCodigo.TabIndex = 0;
             this.txtEditorCodigo.Text = "";
             // 
-            // menuSalir
+            // openFileDialog
             // 
-            this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(52, 24);
-            this.menuSalir.Text = "Salir";
-            this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 495);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Errores";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 495);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Fila";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(207, 495);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Columna";
-            // 
-            // txtBoxFila
-            // 
-            this.txtBoxFila.Location = new System.Drawing.Point(122, 495);
-            this.txtBoxFila.Name = "txtBoxFila";
-            this.txtBoxFila.Size = new System.Drawing.Size(52, 22);
-            this.txtBoxFila.TabIndex = 5;
-            // 
-            // textBoxColumna
-            // 
-            this.textBoxColumna.Location = new System.Drawing.Point(276, 495);
-            this.textBoxColumna.Name = "textBoxColumna";
-            this.textBoxColumna.Size = new System.Drawing.Size(52, 22);
-            this.textBoxColumna.TabIndex = 6;
-            // 
-            // btnExportarErrores
-            // 
-            this.btnExportarErrores.Location = new System.Drawing.Point(365, 492);
-            this.btnExportarErrores.Name = "btnExportarErrores";
-            this.btnExportarErrores.Size = new System.Drawing.Size(124, 23);
-            this.btnExportarErrores.TabIndex = 7;
-            this.btnExportarErrores.Text = "ExportarErrores";
-            this.btnExportarErrores.UseVisualStyleBackColor = true;
-            this.btnExportarErrores.Click += new System.EventHandler(this.btnExportarErrores_Click);
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // VentanaEditor
             // 
@@ -303,6 +309,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

@@ -7,21 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IDE_PROYECTO1.manejadorArchivo;
 
 namespace IDE_PROYECTO1
 {
     public partial class VentanaEditor : Form
     {
+        private ManejadorArchivo manejadorArchvo;
+
         public VentanaEditor()
         {
             InitializeComponent();
-            //MessageBox.Show("hola a todos");
-           
+            this.manejadorArchvo = new ManejadorArchivo();
         }
-
+        /**
+         * Abre o edita un archivo
+         */
         private void editarArchivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.manejadorArchvo.abrirArchivo(this.openFileDialog, this.txtEditorCodigo);
+                
         }
 
         private void códigoFuenteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,7 +36,7 @@ namespace IDE_PROYECTO1
 
         private void menuNuevoProyecto_Click(object sender, EventArgs e)
         {
-
+            this.manejadorArchvo.saveFile(this.saveFile, this.txtEditorCodigo);
         }
 
         private void menuEliminarProyecto_Click(object sender, EventArgs e)

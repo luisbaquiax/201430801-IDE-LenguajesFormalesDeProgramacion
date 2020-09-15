@@ -44,6 +44,7 @@ namespace IDE_PROYECTO1.manejadorArchivo
         public void abrirArchivo(OpenFileDialog openFile, RichTextBox txtArea)
         {
             openFile.Title = "Busca tu archivo";
+            openFile.Filter = "Archivos.gt |*.gt";
             openFile.ShowDialog();
             try
             {
@@ -53,7 +54,8 @@ namespace IDE_PROYECTO1.manejadorArchivo
                     String ruta = openFile.FileName;
 
                     TextReader lectorArchivo = new StreamReader(ruta);
-                    txtArea.Text = lectorArchivo.ReadToEnd();
+                    //txtArea.Text = lectorArchivo.ReadToEnd();
+                    txtArea.AppendText(lectorArchivo.ReadToEnd());
                     lectorArchivo.Close();
                     //MessageBox.Show("");
                 }
@@ -74,6 +76,8 @@ namespace IDE_PROYECTO1.manejadorArchivo
 
             try
             {
+                saveFileDialog.Filter = "Archivos.gt |*.gt";
+
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     if (File.Exists(saveFileDialog.FileName))
@@ -91,6 +95,45 @@ namespace IDE_PROYECTO1.manejadorArchivo
 
                         StreamWriter textoGuardado = File.CreateText(ruta);
                         textoGuardado.Write(txtArea.Text);
+                        textoGuardado.Flush();
+                        textoGuardado.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo guardar el archivo");
+            }
+
+        }
+
+        /**
+         * Método para guardar el archivo de los errore
+         */
+        public void saveFileErrores(SaveFileDialog saveFileDialog, RichTextBox txtErrores)
+        {
+
+            try
+            {
+                saveFileDialog.Filter = "Archivos.gt |*.gtE";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(saveFileDialog.FileName))
+                    {
+                        String ruta = saveFileDialog.FileName;
+
+                        StreamWriter textoGuardado = File.CreateText(ruta);
+                        textoGuardado.Write(txtErrores.Text);
+                        textoGuardado.Flush();
+                        textoGuardado.Close();
+                    }
+                    else
+                    {
+                        String ruta = saveFileDialog.FileName;
+
+                        StreamWriter textoGuardado = File.CreateText(ruta);
+                        textoGuardado.Write(txtErrores.Text);
                         textoGuardado.Flush();
                         textoGuardado.Close();
                     }
