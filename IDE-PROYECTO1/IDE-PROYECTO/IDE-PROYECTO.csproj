@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6358E291-191C-4475-8BD9-0233845427FC}</ProjectGuid>
+    <ProjectGuid>{93FF467B-3FF3-4D46-891A-B57FC11A93B0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>IDE_PROYECTO1</RootNamespace>
-    <AssemblyName>IDE-PROYECTO1</AssemblyName>
+    <RootNamespace>IDE_PROYECTO</RootNamespace>
+    <AssemblyName>IDE-PROYECTO</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,19 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="automata\Automata.cs" />
-    <Compile Include="automata\Transicion.cs" />
-    <Compile Include="manejadorArchivo\ManejadorArchivo.cs" />
-    <Compile Include="VentanaEditor.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaEditor.Designer.cs">
-      <DependentUpon>VentanaEditor.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="VentanaEditor.resx">
-      <DependentUpon>VentanaEditor.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

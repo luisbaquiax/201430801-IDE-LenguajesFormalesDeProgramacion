@@ -11,7 +11,7 @@ namespace IDE_PROYECTO1.automata
         private String estadoActual;
         private String[] estadoDeAceptacion;
         private Transicion[] transiciones;
-        private String[] alfabeto;
+        private String alfabeto;
 
         public Automata()
         {
@@ -22,7 +22,9 @@ namespace IDE_PROYECTO1.automata
                 new Transicion("Q1","B","Q1"),
                 new Transicion("Q1","C","Q2"),
                 new Transicion("Q2","B","Q1")};
-            this.alfabeto = new string[] { "B", "C" };
+            /*this.alfabeto = new string[] { "A", "B","C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N","Ñ", "O", "P", "Q", "R",
+             "S", "T","U", "V", "W","X", "Y", "Z","1", "2", "3","4", "5", "6","7", "8", "9","0"};*/
+            this.alfabeto = obtenerAlfabeto();
         }
 
         public void analizarTexto(String texto)
@@ -55,12 +57,22 @@ namespace IDE_PROYECTO1.automata
         {
             for (int i = 0; i < this.alfabeto.Length; i++)
             {
-                if (this.alfabeto[i].Equals(caracter, StringComparison.InvariantCultureIgnoreCase))
+                if ( this.alfabeto[i].ToString().Equals(caracter, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return true;
                 }
             }
             return false;
+        }
+        /**
+         * Metod para obtener todos los caractere para el alfabeto del IDE-PROYECTO
+         */
+        public String obtenerAlfabeto() {
+            String caracteres = "";
+            for (int i = 32; i < 126; i++) {
+                caracteres += (char)i;
+            }
+            return caracteres;
         }
     }
 }
