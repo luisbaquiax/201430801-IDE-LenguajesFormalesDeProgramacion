@@ -69,7 +69,7 @@
             this.menuSalir});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(995, 28);
+            this.menu.Size = new System.Drawing.Size(1518, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menu";
             // 
@@ -172,7 +172,7 @@
             this.txtErrores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtErrores.Location = new System.Drawing.Point(3, 0);
             this.txtErrores.Name = "txtErrores";
-            this.txtErrores.Size = new System.Drawing.Size(1514, 109);
+            this.txtErrores.Size = new System.Drawing.Size(1514, 153);
             this.txtErrores.TabIndex = 0;
             this.txtErrores.Text = "";
             // 
@@ -267,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 665);
+            this.ClientSize = new System.Drawing.Size(1518, 718);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
