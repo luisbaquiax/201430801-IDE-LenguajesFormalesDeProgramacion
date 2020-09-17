@@ -74,5 +74,15 @@ namespace IDE_PROYECTO1.automata
             }
             return caracteres;
         }
+        /**
+         * Convierte una cadena en una arreglo de caracteres
+         */
+        public char[] obtenerAlfabetoEnCaracteres(String alfabeto) {
+            char[] caracteres = new Char[alfabeto.Length];
+            for (int i = 0; i< caracteres.Length;  i++) {
+                caracteres[i] = alfabeto[i]; 
+            }
+            return caracteres;
+        }
     }
 }
