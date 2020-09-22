@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="automata\Automata.cs" />
     <Compile Include="automata\Transicion.cs" />
+    <Compile Include="manejadorArchivo\Coloreador.cs" />
     <Compile Include="manejadorArchivo\ManejadorArchivo.cs" />
+    <Compile Include="manejadorArchivo\Proyecto.cs" />
     <Compile Include="VentanaEditor.cs">
       <SubType>Form</SubType>
     </Compile>

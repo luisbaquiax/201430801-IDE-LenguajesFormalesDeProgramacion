@@ -9,9 +9,11 @@ namespace IDE_PROYECTO1.automata
     class Automata
     {
         private String estadoActual;
-        private String[] estadoDeAceptacion;
+        private String[] estadosDeAceptacion;
         private Transicion[] transiciones;
         private String alfabeto;
+        private String cadena;
+        private String caracter;
         //componentes del lenguaje
         private String[] palabrasReservadas;
         private String[] operadoresAritmeticos;
@@ -25,7 +27,7 @@ namespace IDE_PROYECTO1.automata
         public Automata()
         {
             this.estadoActual = "QO";
-            this.estadoDeAceptacion = new string[] { "Q1", "Q2" };
+            this.estadosDeAceptacion = new string[] { "Q1", "Q2" };
             this.transiciones = new Transicion[] {
                 new Transicion("Q0","B","Q1"),
                 new Transicion("Q1","B","Q1"),
@@ -50,38 +52,92 @@ namespace IDE_PROYECTO1.automata
             this.operadoresAsignacionFinSentencia = new String[] { "=", ";" };
             this.palabrasReservadasLenguaje = new string[] { "SI", "SINO", "SINO_SI", "MIENTRAS", "HACER", "DESDE", "HASTA", "INCREMENTO" };
         }
-
+        /**
+         * Se recorre el texto en si, se verifica primero es aceptado en el alfabeto después se hace la transición
+         * auxiliándose de la transición auxiliar, en caso de nulo no es posible la transición
+         * @ param name="texto"
+         */
         public void analizarTexto(String texto)
         {
-            char[] caracteres = texto.ToCharArray();
-            for (int i = 0; i < this.transiciones.Length; i++)
-            {
 
+            for (int i = 0; i < texto.Length; i++)
+            {
+                //this.caracter = Convert.ToString(texto[i]);
+                this.caracter = texto[i].ToString();
+                if (esAceptadoEnAlfabeto(this.alfabeto, caracter))
+                {
+
+                    Transicion auxiliar = buscarTransicion(this.estadoActual, caracter, this.transiciones);
+                    if (auxiliar != null)
+                    {
+                        if (auxiliar.EstadoSiguiente != null)
+                        {
+                            estadoActual = auxiliar.EstadoSiguiente;
+                        }
+                    }
+                    else
+                    {
+                        //se corta el flujo si no se puede realizar la transicion con el caracter actual
+                        
+                        return;
+                    }
+                }
+                else
+                {
+                    //se el caracter no es aceptado en el alfabeto se termina el proceso
+                    return;
+                }
+                if (esEstadoAceptado(estadoActual, this.estadosDeAceptacion))
+                {
+                    //es un estado de aceptación
+                    this.cadena += this.caracter;
+                }
+                else
+                {
+                    //Es un estado de no aceptación
+                }
             }
         }
 
-        public Boolean esPosibleTransitar(String caracter)
+        /**
+         * Busca la transicion auxiliar en la lista de transiones, retorna null si no existe.
+         * @ param name="estadoActual"
+         * @ param name="transiciones"
+         * @ param name="valorActual"
+         */
+        public Transicion buscarTransicion(String estadoActual, String valorActual, Transicion[] transiciones)
         {
-            for (int i = 0; i < this.transiciones.Length; i++)
+            for (int i = 0; i < transiciones.Length; i++)
             {
-                if (this.transiciones[i].Inicial.Equals(this.estadoActual, StringComparison.InvariantCultureIgnoreCase)
-                    && esAceptadoEnAlfabeto(caracter))
+                if (transiciones[i].EstadoInicial.Equals(estadoActual, StringComparison.InvariantCultureIgnoreCase) && (transiciones[i].Valor.Equals(valorActual, StringComparison.InvariantCultureIgnoreCase)))
+                    {
+                    return transiciones[i];
+                }
+            }
+            return null;
+        }
+
+        /**
+         * Verifico si el caracter es aceptado en mi alfabeto
+         * @ param name="caracter"
+         */
+        public Boolean esAceptadoEnAlfabeto(String caracter, String alfabeto)
+        {
+            for (int i = 0; i < alfabeto.Length; i++)
+            {
+                if (this.alfabeto[i].ToString().Equals(caracter, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    //this.estadoActual = this.transiciones[i].getSiguiente;
                     return true;
                 }
             }
             return false;
         }
 
-        /**
-         * Verifico si el caracter es aceptado en mi alfabeto
-         */
-        public Boolean esAceptadoEnAlfabeto(String caracter)
+        public Boolean esEstadoAceptado(String estadoActual, String[] estados)
         {
-            for (int i = 0; i < this.alfabeto.Length; i++)
+            for (int i = 0; i < estados.Length; i++)
             {
-                if (this.alfabeto[i].ToString().Equals(caracter, StringComparison.InvariantCultureIgnoreCase))
+                if (estados[i].Equals(estadoActual, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return true;
                 }
@@ -98,10 +154,13 @@ namespace IDE_PROYECTO1.automata
             {
                 caracteres += (char)i;
             }
+            //salto de línea en codigo ascii
+            caracteres += (char)10;
             return caracteres;
         }
         /**
          * Convierte una cadena en una arreglo de caracteres
+         * @ param name="alfabeto"
          */
         public char[] obtenerAlfabetoEnCaracteres(String alfabeto)
         {
@@ -114,3 +173,5 @@ namespace IDE_PROYECTO1.automata
         }
     }
 }
+
+

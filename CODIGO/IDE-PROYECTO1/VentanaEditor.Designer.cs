@@ -38,12 +38,14 @@
             this.menuCrearCodigoFuente = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbrirCodigoFuente = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEliminarCodigoFuente = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCerrarCodigoFuente = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarAchivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtErrores = new System.Windows.Forms.RichTextBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnCompilar = new System.Windows.Forms.Button();
             this.btnExportarErrores = new System.Windows.Forms.Button();
             this.textBoxColumna = new System.Windows.Forms.TextBox();
             this.txtBoxFila = new System.Windows.Forms.TextBox();
@@ -71,7 +73,7 @@
             this.menuSalir});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1518, 28);
+            this.menu.Size = new System.Drawing.Size(1518, 30);
             this.menu.TabIndex = 0;
             this.menu.Text = "menu";
             // 
@@ -83,34 +85,34 @@
             this.guardarProyectoToolStripMenuItem,
             this.menuEliminarProyecto});
             this.menuProyectos.Name = "menuProyectos";
-            this.menuProyectos.Size = new System.Drawing.Size(87, 24);
+            this.menuProyectos.Size = new System.Drawing.Size(87, 26);
             this.menuProyectos.Text = "Proyectos";
             // 
             // menuNuevoProyecto
             // 
             this.menuNuevoProyecto.Name = "menuNuevoProyecto";
-            this.menuNuevoProyecto.Size = new System.Drawing.Size(224, 26);
+            this.menuNuevoProyecto.Size = new System.Drawing.Size(209, 26);
             this.menuNuevoProyecto.Text = "Nuevo proyecto";
             this.menuNuevoProyecto.Click += new System.EventHandler(this.menuNuevoProyecto_Click);
             // 
             // menuAbrirProyecto
             // 
             this.menuAbrirProyecto.Name = "menuAbrirProyecto";
-            this.menuAbrirProyecto.Size = new System.Drawing.Size(224, 26);
+            this.menuAbrirProyecto.Size = new System.Drawing.Size(209, 26);
             this.menuAbrirProyecto.Text = "Abrir proyecto";
             this.menuAbrirProyecto.Click += new System.EventHandler(this.abrirProyectoToolStripMenuItem_Click);
             // 
             // guardarProyectoToolStripMenuItem
             // 
             this.guardarProyectoToolStripMenuItem.Name = "guardarProyectoToolStripMenuItem";
-            this.guardarProyectoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.guardarProyectoToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.guardarProyectoToolStripMenuItem.Text = "Guardar proyecto";
             this.guardarProyectoToolStripMenuItem.Click += new System.EventHandler(this.guardarProyectoToolStripMenuItem_Click);
             // 
             // menuEliminarProyecto
             // 
             this.menuEliminarProyecto.Name = "menuEliminarProyecto";
-            this.menuEliminarProyecto.Size = new System.Drawing.Size(224, 26);
+            this.menuEliminarProyecto.Size = new System.Drawing.Size(209, 26);
             this.menuEliminarProyecto.Text = "Eliminar proyecto";
             this.menuEliminarProyecto.Click += new System.EventHandler(this.menuEliminarProyecto_Click);
             // 
@@ -120,51 +122,59 @@
             this.menuCrearCodigoFuente,
             this.menuAbrirCodigoFuente,
             this.menuEliminarCodigoFuente,
-            this.menuCerrarCodigoFuente});
+            this.editarToolStripMenuItem,
+            this.cerrarAchivoToolStripMenuItem});
             this.códigoFuenteToolStripMenuItem.Name = "códigoFuenteToolStripMenuItem";
-            this.códigoFuenteToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.códigoFuenteToolStripMenuItem.Size = new System.Drawing.Size(118, 26);
             this.códigoFuenteToolStripMenuItem.Text = "Código fuente";
             this.códigoFuenteToolStripMenuItem.Click += new System.EventHandler(this.códigoFuenteToolStripMenuItem_Click);
             // 
             // menuCrearCodigoFuente
             // 
             this.menuCrearCodigoFuente.Name = "menuCrearCodigoFuente";
-            this.menuCrearCodigoFuente.Size = new System.Drawing.Size(186, 26);
-            this.menuCrearCodigoFuente.Text = "Crear";
+            this.menuCrearCodigoFuente.Size = new System.Drawing.Size(179, 26);
+            this.menuCrearCodigoFuente.Text = "Crear nuevo";
             this.menuCrearCodigoFuente.Click += new System.EventHandler(this.menuCrearCodigoFuente_Click);
             // 
             // menuAbrirCodigoFuente
             // 
             this.menuAbrirCodigoFuente.Name = "menuAbrirCodigoFuente";
-            this.menuAbrirCodigoFuente.Size = new System.Drawing.Size(186, 26);
+            this.menuAbrirCodigoFuente.Size = new System.Drawing.Size(179, 26);
             this.menuAbrirCodigoFuente.Text = "Abrir ";
             this.menuAbrirCodigoFuente.Click += new System.EventHandler(this.menuAbrirCodigoFuente_Click);
             // 
             // menuEliminarCodigoFuente
             // 
             this.menuEliminarCodigoFuente.Name = "menuEliminarCodigoFuente";
-            this.menuEliminarCodigoFuente.Size = new System.Drawing.Size(186, 26);
+            this.menuEliminarCodigoFuente.Size = new System.Drawing.Size(179, 26);
             this.menuEliminarCodigoFuente.Text = "Eliminar";
             this.menuEliminarCodigoFuente.Click += new System.EventHandler(this.menuEliminarCodigoFuente_Click);
             // 
-            // menuCerrarCodigoFuente
+            // editarToolStripMenuItem
             // 
-            this.menuCerrarCodigoFuente.Name = "menuCerrarCodigoFuente";
-            this.menuCerrarCodigoFuente.Size = new System.Drawing.Size(186, 26);
-            this.menuCerrarCodigoFuente.Text = "Cerrar Archivo";
-            this.menuCerrarCodigoFuente.Click += new System.EventHandler(this.menuCerrarCodigoFuente_Click);
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // cerrarAchivoToolStripMenuItem
+            // 
+            this.cerrarAchivoToolStripMenuItem.Name = "cerrarAchivoToolStripMenuItem";
+            this.cerrarAchivoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.cerrarAchivoToolStripMenuItem.Text = "Cerrar achivo";
+            this.cerrarAchivoToolStripMenuItem.Click += new System.EventHandler(this.cerrarAchivoToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.guardarToolStripMenuItem.Text = "Guardar/guardar como";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // menuSalir
             // 
             this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(52, 24);
+            this.menuSalir.Size = new System.Drawing.Size(52, 26);
             this.menuSalir.Text = "Salir";
             this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
@@ -179,7 +189,6 @@
             // txtErrores
             // 
             this.txtErrores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtErrores.Enabled = false;
             this.txtErrores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtErrores.Location = new System.Drawing.Point(0, 0);
             this.txtErrores.Name = "txtErrores";
@@ -189,6 +198,7 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Controls.Add(this.btnCompilar);
             this.panelContenedor.Controls.Add(this.btnExportarErrores);
             this.panelContenedor.Controls.Add(this.textBoxColumna);
             this.panelContenedor.Controls.Add(this.txtBoxFila);
@@ -198,10 +208,20 @@
             this.panelContenedor.Controls.Add(this.panel2);
             this.panelContenedor.Controls.Add(this.panel1);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 28);
+            this.panelContenedor.Location = new System.Drawing.Point(0, 30);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1518, 690);
+            this.panelContenedor.Size = new System.Drawing.Size(1518, 688);
             this.panelContenedor.TabIndex = 1;
+            // 
+            // btnCompilar
+            // 
+            this.btnCompilar.Location = new System.Drawing.Point(536, 489);
+            this.btnCompilar.Name = "btnCompilar";
+            this.btnCompilar.Size = new System.Drawing.Size(75, 34);
+            this.btnCompilar.TabIndex = 8;
+            this.btnCompilar.Text = "Compilar";
+            this.btnCompilar.UseVisualStyleBackColor = true;
+            this.btnCompilar.Click += new System.EventHandler(this.btnCompilar_Click);
             // 
             // btnExportarErrores
             // 
@@ -309,7 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuCrearCodigoFuente;
         private System.Windows.Forms.ToolStripMenuItem menuAbrirCodigoFuente;
         private System.Windows.Forms.ToolStripMenuItem menuEliminarCodigoFuente;
-        private System.Windows.Forms.ToolStripMenuItem menuCerrarCodigoFuente;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox txtErrores;
@@ -327,6 +346,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem guardarProyectoToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarAchivoToolStripMenuItem;
+        private System.Windows.Forms.Button btnCompilar;
     }
 }
 

@@ -9,18 +9,18 @@ namespace IDE_PROYECTO1.automata
     class Transicion
     {
         private String estadoInicial;
-        private String estadoSiguiente;
         private String valor;
+        private String estadoSiguiente;
 
-        public Transicion(string estadoInicial, string estadoSiguiente, string valor)
+        public Transicion(string estadoInicial, string valor, string siguiente)
         {
-            this.estadoInicial = estadoInicial;
-            this.valor = valor;
-            this.estadoSiguiente = estadoSiguiente;
+            this.EstadoInicial = estadoInicial;
+            this.Valor = valor;
+            this.EstadoSiguiente = EstadoSiguiente;
         }
 
-        public string Inicial { get => estadoInicial; set => estadoInicial = value; }
-        public string Siguiente { get => estadoSiguiente; set => estadoSiguiente = value; }
+        public string EstadoInicial { get => estadoInicial; set => estadoInicial = value; }
         public string Valor { get => valor; set => valor = value; }
+        public string EstadoSiguiente { get => estadoSiguiente; set => estadoSiguiente = value; }
     }
 }
