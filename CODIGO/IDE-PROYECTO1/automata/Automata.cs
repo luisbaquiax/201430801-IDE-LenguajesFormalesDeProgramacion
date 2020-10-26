@@ -23,34 +23,48 @@ namespace IDE_PROYECTO1.automata
         private String[] operadoresAsignacionFinSentencia;
         private String[] palabrasReservadasLenguaje;
 
+        public string EstadoActual { get => estadoActual; set => estadoActual = value; }
+        public string[] EstadosDeAceptacion { get => estadosDeAceptacion; set => estadosDeAceptacion = value; }
+        internal Transicion[] Transiciones { get => transiciones; set => transiciones = value; }
+        public string Alfabeto { get => alfabeto; set => alfabeto = value; }
+        public string Cadena { get => cadena; set => cadena = value; }
+        public string[] PalabrasReservadas { get => palabrasReservadas; set => palabrasReservadas = value; }
+        public string[] OperadoresAritmeticos { get => operadoresAritmeticos; set => operadoresAritmeticos = value; }
+        public string[] OperadoresRelacionales { get => operadoresRelacionales; set => operadoresRelacionales = value; }
+        public string[] OperadoresLogicos { get => operadoresLogicos; set => operadoresLogicos = value; }
+        public string[] OperadoresAgrupacion { get => operadoresAgrupacion; set => operadoresAgrupacion = value; }
+        public string[] OperadoresAsignacionFinSentencia { get => operadoresAsignacionFinSentencia; set => operadoresAsignacionFinSentencia = value; }
+        public string[] PalabrasReservadasLenguaje { get => palabrasReservadasLenguaje; set => palabrasReservadasLenguaje = value; }
 
         public Automata()
         {
-            this.estadoActual = "QO";
-            this.estadosDeAceptacion = new string[] { "Q1", "Q2" };
-            this.transiciones = new Transicion[] {
+            this.EstadoActual = "S0";
+            this.EstadosDeAceptacion = new string[] { "S6", "S7", "S13", "S18", "S19", "S20", "S22", "S23" };
+            //transiciones
+            this.Transiciones = new Transicion[] {
                 new Transicion("Q0","B","Q1"),
                 new Transicion("Q1","B","Q1"),
                 new Transicion("Q1","C","Q2"),
                 new Transicion("Q2","B","Q1")};
+
+            this.Alfabeto = obtenerAlfabeto();
+            this.iniciarComponentesDelLenguaje();
             /*this.alfabeto = new string[] { "A", "B","C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N","Ñ", "O", "P", "Q", "R",
              "S", "T","U", "V", "W","X", "Y", "Z","1", "2", "3","4", "5", "6","7", "8", "9","0"};*/
-            this.alfabeto = obtenerAlfabeto();
-
-            this.iniciarComponentesDelLenguaje();
         }
+
         /**
          * Inicia los componetes del lenguaje
          */
         public void iniciarComponentesDelLenguaje()
         {
-            this.palabrasReservadas = new String[] { "enter", "decimal", "cadena", "booleano", "caracter" };
-            this.operadoresAritmeticos = new string[] { "+", "-", "*", "/", "++", "--" };
-            this.operadoresRelacionales = new string[] { ">", "<", ">=", "<=", "==", "!=" };
-            this.operadoresLogicos = new string[] { "||", "&&", "!" };
-            this.operadoresAgrupacion = new string[] { "(", ")" };
-            this.operadoresAsignacionFinSentencia = new String[] { "=", ";" };
-            this.palabrasReservadasLenguaje = new string[] { "SI", "SINO", "SINO_SI", "MIENTRAS", "HACER", "DESDE", "HASTA", "INCREMENTO" };
+            this.PalabrasReservadas = new String[] { "entero", "decimal", "cadena", "booleano", "caracter" };
+            this.OperadoresAritmeticos = new string[] { "+", "-", "*", "/", "++", "--" };
+            this.OperadoresRelacionales = new string[] { ">", "<", ">=", "<=", "==", "!=" };
+            this.OperadoresLogicos = new string[] { "||", "&&", "!" };
+            this.OperadoresAgrupacion = new string[] { "(", ")" };
+            this.OperadoresAsignacionFinSentencia = new String[] { "=", ";" };
+            this.PalabrasReservadasLenguaje = new string[] { "SI", "SINO", "SINO_SI", "MIENTRAS", "HACER", "DESDE", "HASTA", "INCREMENTO" };
         }
         /**
          * Se recorre el texto en si, se verifica primero es aceptado en el alfabeto después se hace la transición
@@ -64,33 +78,33 @@ namespace IDE_PROYECTO1.automata
             {
                 //this.caracter = Convert.ToString(texto[i]);
                 this.caracter = texto[i].ToString();
-                if (esAceptadoEnAlfabeto(this.alfabeto, caracter))
+                if (esAceptadoEnAlfabeto(this.Alfabeto, caracter))
                 {
 
-                    Transicion auxiliar = buscarTransicion(this.estadoActual, caracter, this.transiciones);
+                    Transicion auxiliar = buscarTransicion(this.EstadoActual, caracter, this.Transiciones);
                     if (auxiliar != null)
                     {
                         if (auxiliar.EstadoSiguiente != null)
                         {
-                            estadoActual = auxiliar.EstadoSiguiente;
+                            EstadoActual = auxiliar.EstadoSiguiente;
                         }
                     }
                     else
                     {
                         //se corta el flujo si no se puede realizar la transicion con el caracter actual
-                        
-                        return;
+
+                        //return;
                     }
                 }
                 else
                 {
                     //se el caracter no es aceptado en el alfabeto se termina el proceso
-                    return;
+                    //return;
                 }
-                if (esEstadoAceptado(estadoActual, this.estadosDeAceptacion))
+                if (esEstadoAceptado(EstadoActual, this.EstadosDeAceptacion))
                 {
                     //es un estado de aceptación
-                    this.cadena += this.caracter;
+                    this.Cadena += this.caracter;
                 }
                 else
                 {
@@ -110,7 +124,7 @@ namespace IDE_PROYECTO1.automata
             for (int i = 0; i < transiciones.Length; i++)
             {
                 if (transiciones[i].EstadoInicial.Equals(estadoActual, StringComparison.InvariantCultureIgnoreCase) && (transiciones[i].Valor.Equals(valorActual, StringComparison.InvariantCultureIgnoreCase)))
-                    {
+                {
                     return transiciones[i];
                 }
             }
@@ -119,20 +133,23 @@ namespace IDE_PROYECTO1.automata
 
         /**
          * Verifico si el caracter es aceptado en mi alfabeto
-         * @ param name="caracter"
+         * param name="caracter"
+         * param name="alfabeto"
          */
         public Boolean esAceptadoEnAlfabeto(String caracter, String alfabeto)
         {
             for (int i = 0; i < alfabeto.Length; i++)
             {
-                if (this.alfabeto[i].ToString().Equals(caracter, StringComparison.InvariantCultureIgnoreCase))
+                if (this.Alfabeto[i].ToString().Equals(caracter, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return true;
                 }
             }
             return false;
         }
-
+        /**
+         * Verifica si el estado actual es un estado aceptado
+         */
         public Boolean esEstadoAceptado(String estadoActual, String[] estados)
         {
             for (int i = 0; i < estados.Length; i++)
