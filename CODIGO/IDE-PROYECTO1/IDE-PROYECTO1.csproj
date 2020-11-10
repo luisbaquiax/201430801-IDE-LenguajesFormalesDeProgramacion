@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="automata\Automata.cs" />
+    <Compile Include="automataDePila\Pila.cs" />
+    <Compile Include="automata\AutomataV2.cs" />
+    <Compile Include="automata\AnalizadorLexico.cs" />
+    <Compile Include="automata\Token.cs" />
     <Compile Include="automata\Transicion.cs" />
-    <Compile Include="manejadorArchivo\Coloreador.cs" />
+    <Compile Include="manejadorArchivo\Pintor.cs" />
     <Compile Include="manejadorArchivo\ManejadorArchivo.cs" />
     <Compile Include="manejadorArchivo\Proyecto.cs" />
     <Compile Include="VentanaEditor.cs">

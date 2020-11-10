@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDE_PROYECTO1.automata
 {
-    class Automata
+    class AutomataV2
     {
         private String estadoActual;
         private String[] estadosDeAceptacion;
@@ -36,7 +36,7 @@ namespace IDE_PROYECTO1.automata
         public string[] OperadoresAsignacionFinSentencia { get => operadoresAsignacionFinSentencia; set => operadoresAsignacionFinSentencia = value; }
         public string[] PalabrasReservadasLenguaje { get => palabrasReservadasLenguaje; set => palabrasReservadasLenguaje = value; }
 
-        public Automata()
+        public AutomataV2()
         {
             this.EstadoActual = "S0";
             this.EstadosDeAceptacion = new string[] { "S6", "S7", "S13", "S18", "S19", "S20", "S22", "S23" };

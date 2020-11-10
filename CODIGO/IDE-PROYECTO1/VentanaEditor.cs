@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IDE_PROYECTO1.manejadorArchivo;
+using IDE_PROYECTO1.automata;
 using System.IO;
 
 namespace IDE_PROYECTO1
@@ -15,6 +16,8 @@ namespace IDE_PROYECTO1
     public partial class VentanaEditor : Form
     {
         private ManejadorArchivo manejadorArchvo;
+        private AnalizadorLexico automata;
+        private Pintor pintor;
 
         private string openFileName, folderName;
 
@@ -24,7 +27,6 @@ namespace IDE_PROYECTO1
         {
             InitializeComponent();
             this.manejadorArchvo = new ManejadorArchivo();
-            //int x = this.Cursor.Position.X;
         }
         /**
          * Abre o edita un archivo
@@ -101,11 +103,30 @@ namespace IDE_PROYECTO1
         }
 
         /**
-         * Evento para escribir los errores en el área de texto de los errores
+         * Evento para reconocer los tokens
          */
         private void txtEditorCodigo_TextChanged(object sender, EventArgs e)
         {
-            this.txtErrores.Text = this.txtEditorCodigo.Text;
+            ///this.txtErrores.Text = this.txtEditorCodigo.Text;
+            this.automata = new AnalizadorLexico();
+            this.automata.analizarTexto(this.txtEditorCodigo.Text, this.txtBoxFila, this.textBoxColumna);
+            
+            this.pintor = new Pintor(automata.PalabrasReservadas,
+                automata.OperadoresAritmeticos,
+                automata.OperadoresRelacionales,
+                automata.OperadoresLogicos,
+                automata.OperadoresAgrupacion,
+                automata.OperadoresAsignacionFinSentencia,
+                automata.PalabrasReservadasLenguaje, 
+                this.txtEditorCodigo);
+
+            this.pintor.colorearPalabrasReservadas();
+            this.pintor.pintarFindeSentencia();
+            this.pintor.pintarOperadoreLogicos();
+            this.pintor.pintarOperadoreRelacionales();
+            this.pintor.pintarOperadoresAritmeticos();
+            this.pintor.pintarPalabrasReservadasLenguaje();
+            this.pintor.pintarSignosdeAgrupacion();
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
